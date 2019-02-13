@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block content %}
+
+
+<h2 class="display-1"> Publish Post </h2>
+
+<p class="lead"> Write what you think :) </p>
+
+<div class="container" style="border:1px solid #cecece;">
+
+<form action="" method="post">
+  {% csrf_token %}
+
+  <div class="row top-buffer" >
+    <div class="col-2">Title : </div>   <div class="col-10">{{form.post_title}} <p><small><em> Give this a title! </em></small></p></div>
+  </div>
+  <div class="row">
+    <div class="col-2">Date: </div>   <div class="col-10">{{ form.post_content }} <p><small><em> Write down your thoughts </em></small></p></div>
+  </div>
+  <input type="submit" class="btn btn-success btn-sm bottom-buffer" value="Submit">
+
+</form>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>CCIL So-Blessed Fellowship!</h1>
+  <p>Welcome to SBF online, developed by Alex F.</p>
+
+  <div class="row">
+  {% if posts %}
+  <div class="col-sm-3">
+  <h2> Past Posts </h2>
+  <p class="lead"> An archive of past posts </p>
+</div>
+  {% for post in posts %}
+  <div class="col-sm-3">
+  <div class="card" style="width: 20rem;">
+      <div class="card bg-dark text-white">
+    <div class="card-body">
+      <h5 class="card-title">{{ post.post_title }}</h5>
+      <p class="card-text">{{post.pub_date}}</p>
+      <a href="{{ post.get_absolute_url }}" class="btn btn-primary">More Details</a>
+    </div>
+  </div>
+  </div>
+</div>
+{% endfor %}
+{% else %}
+  <p>No posts yet</p>
+{% endif %}
+</div>
+
+
+{% endblock %}

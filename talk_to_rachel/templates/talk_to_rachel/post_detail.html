@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" >
+{% block content %}
+
+<h1 class="display-3">{{post.post_title}}</h1>
+<p class="display-4"> {{post.pub_date}}</p>
+
+<!-- <div class="container" style="border:1px solid #cecece;"> -->
+
+<div class="row row-flex" style="margin-right:20px">
+<div class="col-6" >
+  <div class="colour-7 content go-center">
+    <h3 > This is what I think...</h3>
+<p class="lead"> {{post.post_content}} </p>
+</div>
+</div>
+<div class="col-3 lead" >
+  <div class="colour-8 content go-center">
+  <h4> Alex</h4>
+ 
+</div>
+</div>
+<div class="col-3">
+  <div class="colour-0 content go-center">
+
+  <h4>Rachel</h4>
+
+</div>
+</div>
+</div>
+
+<form action="#" method="get" class="top-buffer">
+ <a href="{{ post.get_absolute_url }}/edit" class="btn btn-warning btn-sm " value="Edit" name="edit_btn"> Edit </a>
+
+</form>
+
+<form action="#" method="get" class="top-buffer">
+ <a href="{{ post.get_absolute_url }}/delete" class="btn btn-danger btn-sm " value="Delete" name="delete_btn"> Delete </a>
+</form>
+
+ <!-- </div> -->
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  <h1 >Event List</h1>
+
+<div class="row">
+  {% if post_list %}
+    {% for post in post_list %}
+    <div class="col-md-3" style="margin-top: 20px;">
+        <div class="card" style="width: 20rem;">
+            <div class="card bg-dark text-white">
+          <div class="card-body" >
+            <h5 class="card-title top-buffer" >{{ post.post_title }}</h5>
+            <p class="card-text">{{post.pub_date}}</p>
+            <a href="{{ post.get_absolute_url }}" class="btn btn-primary">More Details</a>
+            <a href="#" class="btn btn-primary btn top-buffer" role="button" aria-pressed="true">Going</a>
+            <a href="#" class="btn btn-secondary btn " role="button" aria-pressed="true">Not Going</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>There are no registered events.</p>
+  {% endif %}
+</div>
+
+{% endblock %}
